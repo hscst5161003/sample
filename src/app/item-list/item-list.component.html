@@ -1,5 +1,21 @@
-<mat-card class="tile">
+<div class="tile">
   <mat-chip-list class="container" (dragover)="dragoverE()" (drop)="dropE()">
     <mat-chip class="list-item" *ngFor="let item of items" draggable="true" [style.width]="wrap">{{ item }}</mat-chip>
   </mat-chip-list>
-</mat-card>
+  <br>
+  <mat-divider [inset]="true"></mat-divider>
+  <br>
+  <mat-chip-list class="container scroll" (dragover)="dragoverE()" (drop)="dropE()">
+    <mat-chip class="list-item" *ngFor="let item of madeItems" draggable="true" [style.width]="wrap">{{ item }}</mat-chip>
+  </mat-chip-list>
+  <br>
+  <div class="bottoms">
+  <mat-divider [inset]="true"></mat-divider>
+  <div class="container">
+    <mat-form-field>
+      <input matInput placeholder="element name" [(ngModel)]="newElementName">
+    </mat-form-field>
+    <button mat-raised-button color="accent" (click)="createElement()">作成</button>
+  </div>
+</div>
+</div>

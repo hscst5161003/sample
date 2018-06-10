@@ -5,25 +5,35 @@ import { ChapterService } from './chapter.service';
   selector: 'app-item-list',
   templateUrl: './item-list.component.html',
   styleUrls: ['./item-list.component.css'],
-  providers: [ ChapterService ]
+  providers: [ChapterService]
 })
 export class ItemListComponent implements OnInit {
 
   items: string[];
+  madeItems: string[] = [];
+  newElementName: string;
 
   constructor(private service: ChapterService) {
     this.items = service.itemList;
+    this.newElementName = '';
   }
 
   ngOnInit() {
   }
 
-  dragstartE() {}
+  dragstartE() { }
 
-  dragoverE() {}
+  dragoverE() { }
 
-  dropE() {}
+  dropE() { }
 
-  dragendE() {}
+  dragendE() { }
+
+  createElement() {
+    if (this.newElementName.length !== 0) {
+      this.madeItems.push(this.newElementName);
+      this.newElementName = '';
+    }
+  }
 
 }
