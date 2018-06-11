@@ -1,1 +1,20 @@
-<div class="parts"></div>
+<div class="parts container">
+    <mat-list>
+        <mat-list-item *ngFor="let item of items">{{ item }}</mat-list-item>
+    </mat-list>
+    <mat-divider class="number" [vertical]="true" [inset]="true"></mat-divider>
+    <mat-list class="max-width">
+        <mat-list-item class="max-width"></mat-list-item>
+        <mat-list-item class="max-width"></mat-list-item>
+        <mat-list-item class="max-width"></mat-list-item>
+        <mat-list-item class="max-width"></mat-list-item>
+        <mat-list-item class="max-width"></mat-list-item>
+        <mat-list-item class="max-width"></mat-list-item>
+        <mat-list-item class="max-width"></mat-list-item>
+        <mat-list-item class="max-width"></mat-list-item>
+        <mat-list-item class="max-width"></mat-list-item>
+        <mat-list-item class="max-width"></mat-list-item>
+        <mat-list-item class="max-width"></mat-list-item>
+        <mat-list-item class="max-width"></mat-list-item>
+    </mat-list>
+</div>

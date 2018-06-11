@@ -10,12 +10,15 @@ import { ChapterService } from './chapter.service';
 export class ItemListComponent implements OnInit {
 
   items: string[];
-  madeItems: string[] = [];
+  madeItems: string[];
   newElementName: string;
+  madeItemIdx: number;
 
   constructor(private service: ChapterService) {
     this.items = service.itemList;
     this.newElementName = '';
+    this.madeItems = [];
+    this.madeItemIdx = -1;
   }
 
   ngOnInit() {
@@ -34,6 +37,17 @@ export class ItemListComponent implements OnInit {
       this.madeItems.push(this.newElementName);
       this.newElementName = '';
     }
+  }
+
+  selectedElement(idx) {
+    this.madeItemIdx = idx;
+  }
+
+  deleteElement() {
+    if (this.madeItemIdx !== -1) {
+      this.madeItems.splice(this.madeItemIdx - 1, 1);
+    }
+    this.madeItemIdx = -1;
   }
 
 }

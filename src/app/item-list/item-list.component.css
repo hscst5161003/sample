@@ -4,8 +4,16 @@
     position: relative;
 }
 
-.container {
+.flewap {
     flex-wrap: wrap;
+}
+
+.container {
+    display: flex;
+}
+
+.column-container {
+    flex-direction: column;
 }
 
 .bottoms {
@@ -15,4 +23,16 @@
 
 .scroll {
     overflow: scroll;
+}
+
+.max-width {
+    width: 100%;
+}
+
+.color1 {
+    background-color: #A5DFF9;
+}
+
+.color2 {
+    background-color: #ef5285;
 }
