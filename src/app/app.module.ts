@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatButtonModule, MatChipsModule, MatCardModule, MatListModule,
-         MatGridListModule, MatDividerModule, MatInputModule, } from '@angular/material';
+         MatGridListModule, MatDividerModule, MatInputModule, MatIconModule, } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { ItemListComponent } from './item-list/item-list.component';
@@ -31,6 +31,7 @@ import { ChipFactoryComponent } from './chip-factory/chip-factory.component';
     MatGridListModule,
     MatDividerModule,
     MatInputModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

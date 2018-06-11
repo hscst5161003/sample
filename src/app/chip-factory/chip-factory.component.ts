@@ -12,4 +12,6 @@ export class ChipFactoryComponent implements OnInit {
   ngOnInit() {
   }
 
+  edit() {}
+
 }

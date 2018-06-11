@@ -3,9 +3,7 @@
     <div class="left item max-height">
       <app-editor></app-editor>
     </div>
-    <br>
-    <mat-divider [vertical]="true" [inset]="true"></mat-divider>
-    <br>
+    <mat-divider class="item" [vertical]="true" [inset]="true"></mat-divider>
     <div class="right item max-height">
       <app-item-list></app-item-list>
     </div>
@@ -14,13 +12,11 @@
   <mat-divider [inset]="true"></mat-divider>
   <br>
   <div class="child-container bottom max-width">
-    <div class="left item max-height">
+    <div class="left max-height">
       <app-output></app-output>
     </div>
-    <br>
-    <mat-divider [vertical]="true" [inset]="true"></mat-divider>
-    <br>
-    <div class="right item max-height">
+    <mat-divider class="item" [vertical]="true" [inset]="true"></mat-divider>
+    <div class="right max-height">
       <app-chip-factory></app-chip-factory>
     </div>
   </div>
