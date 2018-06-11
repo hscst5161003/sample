@@ -16,4 +16,19 @@ export class EditorComponent implements OnInit {
   ngOnInit() {
   }
 
+  dragstartE() {
+
+  }
+
+  dragoverE(event) {
+    event.preventDefault();
+  }
+
+  dropE(event, i) {
+    this.chips[i].push(event.dataTransfer.getData('text/plain'));
+  }
+
+  dragendE() {
+
+  }
 }

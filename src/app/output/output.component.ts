@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OutputComponent implements OnInit {
 
+  lines: string[] = ['らんらんるー', 'エラー', 'gfd45345'];
+
   constructor() { }
 
   ngOnInit() {

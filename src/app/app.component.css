@@ -19,11 +19,11 @@
 }
 
 .left {
-    width: 60%;
+    width: 74%;
 }
 
 .right {
-    width: 40%;
+    width: 25%;
 }
 
 .item {
@@ -39,5 +39,21 @@
 }
 
 .divider-width {
-    width: 10px;
+    width: 1%;
+}
+
+.test {
+    background-color: black;
+}
+
+.min-width {
+    width: 1px;
+}
+
+.min-height {
+    height: 1px
+}
+
+.zpd {
+    padding: 0px;
 }

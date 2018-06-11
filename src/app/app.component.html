@@ -1,9 +1,11 @@
 <mat-card class="container">
   <div class="child-container upper max-width">
-    <div class="left item max-height">
+    <div class="left max-height">
       <app-editor></app-editor>
     </div>
-    <mat-divider class="item" [vertical]="true" [inset]="true"></mat-divider>
+    <div class="divider-width max-height">
+      <mat-divider class="max-width zpd" [vertical]="true" [inset]="true"></mat-divider>
+    </div>
     <div class="right item max-height">
       <app-item-list></app-item-list>
     </div>
@@ -15,7 +17,9 @@
     <div class="left max-height">
       <app-output></app-output>
     </div>
-    <mat-divider class="item" [vertical]="true" [inset]="true"></mat-divider>
+    <div class="divider-width max-height">
+      <mat-divider class="" [vertical]="true" [inset]="true"></mat-divider>
+    </div>
     <div class="right max-height">
       <app-chip-factory></app-chip-factory>
     </div>

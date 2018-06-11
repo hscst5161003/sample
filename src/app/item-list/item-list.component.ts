@@ -24,7 +24,9 @@ export class ItemListComponent implements OnInit {
   ngOnInit() {
   }
 
-  dragstartE() { }
+  dragstartE(event, item) {
+    event.dataTransfer.setData('text/plain', item);
+  }
 
   dragoverE() { }
 
