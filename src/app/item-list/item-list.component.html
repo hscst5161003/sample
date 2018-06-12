@@ -7,7 +7,7 @@
   <br>
   <mat-chip-list class="flewap" (dragover)="dragoverE()" (drop)="dropE()">
     <mat-chip class="list-item" *ngFor="let item of madeItems; let i of index"
-              draggable="true" (click)="selectedElement(i)">{{ item }}</mat-chip>
+              draggable="true" (click)="selectedElement(i)" (dragstart)="dragstartE($event, item)">{{ item }}</mat-chip>
   </mat-chip-list>
   <br>
   <div class="bottoms max-width">

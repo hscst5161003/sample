@@ -10,6 +10,7 @@ export class EditorComponent implements OnInit {
   items: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   chips: string[][] = [[], [], [], [], [], [], [], [], [], [], [], []];
   removable = true;
+  selectline: number;
 
   constructor() { }
 
@@ -20,12 +21,13 @@ export class EditorComponent implements OnInit {
 
   }
 
-  dragoverE(event) {
+  dragoverE(event, i) {
     event.preventDefault();
+    this.selectline = i;
   }
 
-  dropE(event, i) {
-    this.chips[i].push(event.dataTransfer.getData('text/plain'));
+  dropE(event) {
+    this.chips[this.selectline].push(event.dataTransfer.getData('text/plain'));
   }
 
   dragendE() {

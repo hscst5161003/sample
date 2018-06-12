@@ -4,12 +4,10 @@
     </mat-list>
     <mat-divider class="number" [vertical]="true" [inset]="true"></mat-divider>
     <mat-list class="max-width">
-        <div *ngFor="let line of chips; let i of index" class="max-width" (dragover)="dragoverE($event)" (drop)="dropE($event, i)">
-            <mat-list-item class="max-width">
-                <mat-chip *ngFor="let chip of line; let j of index" draggable="true" (dragstart)="dragstartE($event, i, j)" (dragend)="dragendE($event)">{{ chip }}
-                    <mat-icon matChipRemove *ngIf="removable"></mat-icon>
-                </mat-chip>
-            </mat-list-item>
-        </div>
+        <mat-list-item class="max-width" *ngFor="let line of chips; let i = index" (dragover)="dragoverE($event, i)" (drop)="dropE($event)">
+            <mat-chip *ngFor="let chip of line; let j = index" draggable="true" (dragstart)="dragstartE($event, i, j)" (dragend)="dragendE($event)">{{ chip }}
+                <mat-icon matChipRemove *ngIf="removable"></mat-icon>
+            </mat-chip>
+        </mat-list-item>
     </mat-list>
 </div>
