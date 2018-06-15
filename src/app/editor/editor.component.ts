@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ChipsService } from '../services/chips.service';
+import { TagEditService } from '../services/tag-edit.service';
 
 @Component({
   selector: 'app-editor',
@@ -8,29 +10,37 @@ import { Component, OnInit } from '@angular/core';
 export class EditorComponent implements OnInit {
 
   items: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  chips: string[][] = [[], [], [], [], [], [], [], [], [], [], [], []];
-  removable = true;
-  selectline: number;
+  isDropped = false;
 
-  constructor() { }
+  constructor(private service1: ChipsService, private service2: TagEditService) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  private dragstartE(event, item) {
+    event.dataTransfer.setData('text/plain', item);
+    this.service1.tagDrag = true;
   }
 
-  dragstartE() {
-
+  private dragoverE(event) {
+    if (this.service1.tagDrag) {
+      event.preventDefault();
+    }
   }
 
-  dragoverE(event, i) {
-    event.preventDefault();
-    this.selectline = i;
+  private dropE(event, i) {
+    this.service1.add(event.dataTransfer.getData('text/plain'), i);
+    this.isDropped = true;
   }
 
-  dropE(event) {
-    this.chips[this.selectline].push(event.dataTransfer.getData('text/plain'));
+  private dragendE(i, j) {
+    if (this.isDropped) {
+      this.service1.searchAndDestroy(i, j);
+    }
+    this.service1.tagDrag = false;
+    this.isDropped = false;
   }
 
-  dragendE() {
-
+  public searchAndDestroy(i, j) {
+    this.service1.searchAndDestroy(i, j);
   }
 }

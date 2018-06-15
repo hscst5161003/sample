@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ChapterService } from './chapter.service';
+import { ChapterService } from '../services/chapter.service';
+import { ChipsService } from '../services/chips.service';
 
 @Component({
   selector: 'app-item-list',
   templateUrl: './item-list.component.html',
   styleUrls: ['./item-list.component.css'],
-  providers: [ChapterService]
 })
 export class ItemListComponent implements OnInit {
 
@@ -14,7 +14,7 @@ export class ItemListComponent implements OnInit {
   newElementName: string;
   madeItemIdx: number;
 
-  constructor(private service: ChapterService) {
+  constructor(private service: ChapterService, private service2: ChipsService) {
     this.items = service.itemList;
     this.newElementName = '';
     this.madeItems = [];
@@ -26,13 +26,12 @@ export class ItemListComponent implements OnInit {
 
   dragstartE(event, item) {
     event.dataTransfer.setData('text/plain', item);
+    this.service2.tagDrag = true;
   }
 
-  dragoverE() { }
-
-  dropE() { }
-
-  dragendE() { }
+  dragendE() {
+    this.service2.tagDrag = false;
+  }
 
   createElement() {
     if (this.newElementName.length !== 0) {

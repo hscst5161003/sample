@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ChipsService } from './services/chips.service';
+import { TagEditService } from './services/tag-edit.service';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatButtonModule, MatChipsModule, MatCardModule, MatListModule,
@@ -33,7 +35,7 @@ import { ChipFactoryComponent } from './chip-factory/chip-factory.component';
     MatInputModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [ ChipsService, TagEditService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

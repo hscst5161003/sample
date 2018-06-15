@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ChipsService } from '../services/chips.service';
+import { TagEditService } from '../services/tag-edit.service';
 
 @Component({
   selector: 'app-chip-factory',
@@ -7,11 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChipFactoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: ChipsService, private service2: TagEditService) { }
 
   ngOnInit() {
   }
 
-  edit() {}
+  edit() {
+    this.service2.value = this.service2.value ? false : true;
+  }
+
+  clear() {
+    this.service.clear();
+  }
 
 }

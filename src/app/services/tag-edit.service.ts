@@ -5,5 +5,19 @@ import { Injectable } from '@angular/core';
 })
 export class TagEditService {
 
-  constructor() { }
+  private editstate;
+
+  constructor() { this.editstate = false; }
+
+
+  public get value(): boolean {
+    return this.editstate;
+  }
+
+
+  public set value(v: boolean) {
+    this.editstate = v;
+  }
+
+
 }
