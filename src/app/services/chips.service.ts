@@ -6,12 +6,14 @@ import { Injectable } from '@angular/core';
 export class ChipsService {
 
   private chips: string[][] = [[], [], [], [], [], [], [], [], [], [], [], []];
+  private chipsState: string[][] = [[], [], [], [], [], [], [], [], [], [], [], []];
   private isTagDrag = false;
 
   constructor() { }
 
-  add(str: string, i: number) {
-    this.chips[i].push(str);
+  add(str: string, i: number, j: number) {
+    this.chips[i].splice(j, 0, str);
+    this.chipsState[i].splice(j, 0, 'aa');
   }
 
   clear() {
@@ -25,6 +27,9 @@ export class ChipsService {
 
   public get value(): string[][] {
     return this.chips;
+  }
+  public get value2(): string[][] {
+    return this.chipsState;
   }
 
   public get tagDrag(): boolean {
