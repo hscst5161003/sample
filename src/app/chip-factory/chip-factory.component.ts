@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ChipsService } from '../services/chips.service';
 import { TagEditService } from '../services/tag-edit.service';
+import { DACT, ACT, StoryService } from '../services/story.service';
+
+const START = '開始';
+const END = '終了';
 
 @Component({
   selector: 'app-chip-factory',
@@ -9,7 +13,11 @@ import { TagEditService } from '../services/tag-edit.service';
 })
 export class ChipFactoryComponent implements OnInit {
 
-  constructor(private service: ChipsService, private service2: TagEditService) { }
+  private next = false;
+
+  constructor(private service: ChipsService, private service2: TagEditService, private ss: StoryService) { }
+
+  storyState = START;
 
   ngOnInit() {
   }
@@ -20,11 +28,19 @@ export class ChipFactoryComponent implements OnInit {
         this.service.value2[i][j] = 'aa';
       }
     }
-    this.service2.value = this.service2.value ? false : true;
+    this.service2.value = !this.service2.value;
   }
 
   clear() {
     this.service.clear();
   }
+
+  storyStart() {
+    this.storyState = this.storyState === START ? END : START;
+    this.ss.modalToggle();
+    this.next = !this.next;
+  }
+
+  nextSection() { this.ss.next(); }
 
 }

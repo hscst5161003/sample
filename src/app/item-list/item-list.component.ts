@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChapterService } from '../services/chapter.service';
 import { ChipsService } from '../services/chips.service';
+import { StoryService } from '../services/story.service';
 
 @Component({
   selector: 'app-item-list',
@@ -14,7 +15,7 @@ export class ItemListComponent implements OnInit {
   newElementName: string;
   madeItemIdx: number;
 
-  constructor(private service: ChapterService, private service2: ChipsService) {
+  constructor(private service: ChapterService, private service2: ChipsService, private ss: StoryService) {
     this.items = service.itemList;
     this.newElementName = '';
     this.madeItems = [];

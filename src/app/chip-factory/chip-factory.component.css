@@ -19,3 +19,7 @@
 .color5 {
     background-color: #E71D36;
 }
+
+.zidx {
+    z-index: 3;
+}
