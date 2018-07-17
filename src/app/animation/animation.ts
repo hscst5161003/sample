@@ -1,4 +1,4 @@
-import { trigger, style, state, transition, animate } from '@angular/animations';
+import { trigger, style, state, transition, animate, keyframes } from '@angular/animations';
 
 export const anies = [
     trigger('a', [
@@ -46,9 +46,17 @@ export const anies = [
         transition('act => dact', animate('0.3s linear'))
     ]),
     trigger('zidx', [
-        state('s1', style({ 'z-index': 1 })),
-        state('s3', style({ 'z-index': 3 })),
-        transition('s1 => s3', animate('0.3s linear')),
-        transition('s3 => s1', animate('0.3s linear'))
+        state('s1', style({ 'z-index': 1, opacity: 1 })),
+        state('s3', style({ 'z-index': 3, opacity: 1 })),
+        transition('s1 => s3', [ animate(300, keyframes([
+            style({'z-index': 1, opacity: 0, offset: 0.01}),
+            style({'z-index': 3, opacity: 0, offset: 0.02}),
+            style({'z-index': 3, opacity: 1, offset: 0.99}),
+        ]))]),
+        transition('s3 => s1', [ animate(600, keyframes([
+            style({'z-index': 3, opacity: 0, offset: 0.50}),
+            style({'z-index': 1, opacity: 0, offset: 0.51}),
+            style({'z-index': 1, opacity: 1, offset: 0.99}),
+        ]))])
     ])
 ];

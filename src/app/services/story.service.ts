@@ -14,7 +14,7 @@ export class StoryService {
   private three = 'three';
   private modalSW = DACT;
 
-  private ovstate = ['1', '1', '1', '1'];
+  private ovstate = ['1', '1', '1'];
   private idx = 0;
 
   constructor() { }
