@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChipsService } from '../services/chips.service';
 import { TagEditService } from '../services/tag-edit.service';
 import { DACT, ACT, StoryService } from '../services/story.service';
+import { anies } from '../animation/animation';
 
 const START = '開始';
 const END = '終了';
@@ -9,7 +10,8 @@ const END = '終了';
 @Component({
   selector: 'app-chip-factory',
   templateUrl: './chip-factory.component.html',
-  styleUrls: ['./chip-factory.component.css']
+  styleUrls: ['./chip-factory.component.css'],
+  animations: anies
 })
 export class ChipFactoryComponent implements OnInit {
 
@@ -18,6 +20,9 @@ export class ChipFactoryComponent implements OnInit {
   constructor(private service: ChipsService, private service2: TagEditService, private ss: StoryService) { }
 
   storyState = START;
+  exebt = this.ss.sigh();
+  fnibt = this.ss.sigh();
+  edibt = this.ss.sigh();
 
   ngOnInit() {
   }

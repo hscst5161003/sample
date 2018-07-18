@@ -1,12 +1,12 @@
 <mat-card class="container">
   <div class="child-container upper max-width">
-    <div class="left max-height" [@zidx]='ss.state1'>
+    <div class="left max-height" [@zidx]='ss.getState(editorID)'>
       <app-editor></app-editor>
     </div>
     <div class="divider-width max-height">
       <mat-divider class="max-width zpd" [vertical]="true" [inset]="true"></mat-divider>
     </div>
-    <div class="right item max-height" [@zidx]='ss.state2'>
+    <div class="right item max-height">
       <app-item-list></app-item-list>
     </div>
   </div>
@@ -14,7 +14,7 @@
   <mat-divider [inset]="true"></mat-divider>
   <br>
   <div class="child-container bottom max-width">
-    <div class="left max-height" [@zidx]='ss.state3'>
+    <div class="left max-height" [@zidx]='ss.getState(outputID)'>
       <app-output></app-output>
     </div>
     <div class="divider-width max-height">

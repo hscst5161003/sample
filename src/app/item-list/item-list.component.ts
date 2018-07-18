@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ChapterService } from '../services/chapter.service';
 import { ChipsService } from '../services/chips.service';
 import { StoryService } from '../services/story.service';
+import { anies } from '../animation/animation';
 
 @Component({
   selector: 'app-item-list',
   templateUrl: './item-list.component.html',
   styleUrls: ['./item-list.component.css'],
+  animations: anies,
 })
 export class ItemListComponent implements OnInit {
 
@@ -21,6 +23,12 @@ export class ItemListComponent implements OnInit {
     this.madeItems = [];
     this.madeItemIdx = -1;
   }
+
+  dchips = this.ss.sigh();
+  ochips = this.ss.sigh();
+  df = this.ss.sigh();
+  cbt = this.ss.sigh();
+  dbt = this.ss.sigh();
 
   ngOnInit() {
   }

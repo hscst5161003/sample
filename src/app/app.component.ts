@@ -12,5 +12,8 @@ export class AppComponent {
 
   constructor(private ss: StoryService) { }
 
+  editorID = this.ss.sigh();
+  outputID = this.ss.sigh();
+
   private modalToggle() { this.ss.modalToggle(); }
 }

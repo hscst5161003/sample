@@ -14,7 +14,7 @@ export class StoryService {
   private three = 'three';
   private modalSW = DACT;
 
-  private ovstate = ['1', '1', '1'];
+  private ovstate = [];
   private idx = 0;
 
   constructor() { }
@@ -43,8 +43,12 @@ export class StoryService {
     this.idx = this.idx % this.ovstate.length;
     this.ovstate[this.idx] = 's3';
   }
-  public get state1(): string { return this.ovstate[0]; }
-  public get state2(): string { return this.ovstate[1]; }
-  public get state3(): string { return this.ovstate[2]; }
+
+  public sigh(): number {
+    this.ovstate.push('s1');
+    return this.ovstate.length - 1;
+  }
+
+  public getState(idx: number): string { return this.ovstate[idx]; }
 
 }
